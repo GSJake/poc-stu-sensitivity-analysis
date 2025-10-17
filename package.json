@@ -11,18 +11,16 @@
     "postinstall": "node -e \"console.log('esbuild binary check:', require('esbuild').version)\""
   },
   "dependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
     "chart.js": "^4.4.0",
+    "esbuild": "^0.21.5",
     "jspdf": "^3.0.3",
     "jspdf-autotable": "^5.0.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.2.0",
-    "esbuild": "^0.21.5",
+    "react-dom": "^18.2.0",
     "typescript": "^5.0.0",
     "vite": "^5.0.0"
   }
