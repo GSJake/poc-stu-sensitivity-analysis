@@ -1,14 +1,8 @@
 # Databricks Apps configuration
-# Build and runtime commands for Node.js + FastAPI app
-
-# Install dependencies and build frontend before starting
+# Databricks automatically runs npm install and npm run build before starting
+# This command only handles the server startup
 command:
   - sh
   - -c
   - |
-    echo "Installing Node.js dependencies..."
-    npm install
-    echo "Building frontend..."
-    npm run build
-    echo "Starting FastAPI server..."
     uvicorn backend.main:app --host 0.0.0.0 --port 8000

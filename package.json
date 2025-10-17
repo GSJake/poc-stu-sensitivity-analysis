@@ -7,8 +7,7 @@
   "scripts": {
     "build": "npm run build:frontend",
     "build:frontend": "vite build frontend --emptyOutDir",
-    "dev": "vite frontend",
-    "postinstall": "node -e \"console.log('esbuild binary check:', require('esbuild').version)\""
+    "dev": "vite frontend"
   },
   "dependencies": {
     "@types/react": "^18.2.0",
