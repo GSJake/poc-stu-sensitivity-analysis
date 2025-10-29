@@ -363,7 +363,7 @@ function App() {
         text: 'Revenue Comparison by Scenario',
         font: {
           size: 18,
-          family: 'Arial, Helvetica, sans-serif',
+          family: 'Inter, "Helvetica Neue", Arial, sans-serif',
           weight: '600' as const
         },
         color: '#0A2245' // Greystar Navy
@@ -375,7 +375,7 @@ function App() {
         ticks: {
           callback: (value: any) => formatCurrency(value),
           font: {
-            family: 'Arial, Helvetica, sans-serif'
+            family: 'Inter, "Helvetica Neue", Arial, sans-serif'
           },
           color: '#0A2245' // Greystar Navy
         },
@@ -386,7 +386,7 @@ function App() {
       x: {
         ticks: {
           font: {
-            family: 'Arial, Helvetica, sans-serif'
+            family: 'Inter, "Helvetica Neue", Arial, sans-serif'
           },
           color: '#0A2245' // Greystar Navy
         },

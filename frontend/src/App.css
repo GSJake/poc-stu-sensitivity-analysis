@@ -1,7 +1,7 @@
 .App {
   min-height: 100vh;
   background-color: #F8F9FA;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-sans);
 }
 
 .app-header {
@@ -16,7 +16,7 @@
 }
 
 .greystar-logo {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -29,7 +29,7 @@
   margin: 0;
   color: var(--white);
   font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -49,7 +49,7 @@
   font-weight: 600;
   color: var(--white);
   font-size: 0.875rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .filter-group select {
@@ -60,7 +60,7 @@
   background-color: var(--white);
   cursor: pointer;
   min-width: 250px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .dashboard {
@@ -90,7 +90,7 @@
   margin: 0 0 0.5rem 0;
   color: var(--white);
   font-size: 1.75rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -117,14 +117,14 @@
   color: var(--sky);
   font-size: 0.875rem;
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .stat-value {
   color: var(--white);
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .property-section {
@@ -139,7 +139,7 @@
   margin: 0 0 1.5rem 0;
   color: var(--navy);
   font-size: 1.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -155,7 +155,7 @@
   margin: 0 0 0.5rem 0;
   color: var(--navy);
   font-size: 1.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -191,7 +191,7 @@
   margin: 0;
   color: var(--navy);
   font-size: 1.125rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .btn-edit, .btn-save, .btn-reset, .btn-export-pdf {
@@ -201,7 +201,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 0.95rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .btn-edit {
@@ -285,7 +285,7 @@
   font-weight: 600;
   color: var(--navy);
   font-size: 0.95rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .dual-input {
@@ -304,7 +304,7 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .input-field input {
@@ -357,14 +357,14 @@
   color: var(--text-secondary);
   font-weight: 500;
   font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .assumption-item .value {
   color: var(--navy);
   font-weight: 600;
   font-size: 0.95rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .scenarios-section {
@@ -379,7 +379,7 @@
   margin: 0 0 0.5rem 0;
   color: var(--navy);
   font-size: 1.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -401,7 +401,7 @@
   border-bottom: 3px solid transparent;
   transition: all 0.2s;
   font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .tab-button:hover {
@@ -438,7 +438,7 @@
   margin: 0;
   font-size: 1.5rem;
   color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -451,7 +451,7 @@
   background-color: rgba(255,255,255,0.2);
   color: var(--white);
   min-width: 300px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .scenario-name-input::placeholder {
@@ -480,7 +480,7 @@
   font-size: 1.125rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--concrete);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -500,7 +500,7 @@
   font-weight: 600;
   color: var(--navy);
   font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .form-group input,
@@ -510,7 +510,7 @@
   border-radius: 4px;
   font-size: 1rem;
   transition: border-color 0.2s;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .form-group input:focus,
@@ -528,7 +528,7 @@
   margin: 0 0 1rem 0;
   color: var(--navy);
   font-size: 1.125rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -549,7 +549,7 @@
   color: var(--white);
   border-bottom: 2px solid var(--ocean);
   white-space: nowrap;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .floorplan-table td {
@@ -628,7 +628,7 @@
   margin: 0 0 1rem 0;
   color: var(--navy);
   font-size: 1.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -648,7 +648,7 @@
   border-radius: 12px;
   font-size: 0.875rem;
   font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .adjustment.concession {
@@ -676,14 +676,14 @@
 .metric-label {
   color: var(--text-secondary);
   font-size: 0.875rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .metric-value {
   color: var(--navy);
   font-weight: 600;
   font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .chart-section {
@@ -711,7 +711,7 @@
 .sensitivity-table-section h2 {
   margin: 0 0 1.5rem 0;
   color: var(--navy);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }
 
@@ -731,7 +731,7 @@
   font-weight: 600;
   color: var(--white);
   border-bottom: 2px solid var(--ocean);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .sensitivity-table td {
@@ -751,7 +751,7 @@
   min-height: 400px;
   font-size: 1.25rem;
   color: var(--text-secondary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
 
 @media (max-width: 768px) {
