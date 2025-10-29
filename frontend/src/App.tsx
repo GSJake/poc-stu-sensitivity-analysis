@@ -169,15 +169,27 @@ function App() {
     const currentScenario = scenarios[activeTab]
     const pageWidth = doc.internal.pageSize.getWidth()
 
+    // Greystar Brand Colors (RGB for PDF)
+    const NAVY_RGB = [10, 34, 69] as [number, number, number]
+    const OCEAN_RGB = [0, 119, 212] as [number, number, number]
+
+    // Header with Greystar Branding
+    doc.setFillColor(...NAVY_RGB)
+    doc.rect(0, 0, pageWidth, 20, 'F')
+
     // Title
     doc.setFontSize(20)
     doc.setFont('helvetica', 'bold')
-    doc.text('STU Sensitivity Analysis Report', pageWidth / 2, 15, { align: 'center' })
+    doc.setTextColor(255, 255, 255) // White text
+    doc.text('STU Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
+
+    // Reset text color for content
+    doc.setTextColor(...NAVY_RGB)
 
     // Property Details
     doc.setFontSize(12)
     doc.setFont('helvetica', 'normal')
-    let yPos = 25
+    let yPos = 28
     doc.text(`Property: ${selectedProperty.name}`, 15, yPos)
     yPos += 6
     doc.text(`Address: ${selectedProperty.address}`, 15, yPos)
@@ -191,7 +203,9 @@ function App() {
     // Current Scenario Floorplan Breakdown
     doc.setFontSize(14)
     doc.setFont('helvetica', 'bold')
+    doc.setTextColor(...OCEAN_RGB)
     doc.text(`Floorplan Breakdown - ${currentScenario.name}`, 15, yPos)
+    doc.setTextColor(...NAVY_RGB)
     yPos += 5
 
     const floorplanData = selectedProperty.floorplans.map(fp => {
@@ -233,8 +247,16 @@ function App() {
       head: [['Floorplan', 'Type', 'Units', 'Sq Ft', 'Base Rent', 'Adj Base', 'Amenity', 'Adj Amenity', 'Gross Rent', 'Concession', 'Net Effective']],
       body: floorplanData,
       theme: 'grid',
-      headStyles: { fillColor: [102, 126, 234], fontSize: 9 },
-      bodyStyles: { fontSize: 8 },
+      headStyles: {
+        fillColor: NAVY_RGB,
+        textColor: [255, 255, 255],
+        fontSize: 9,
+        fontStyle: 'bold'
+      },
+      bodyStyles: {
+        fontSize: 8,
+        textColor: NAVY_RGB
+      },
       columnStyles: {
         0: { cellWidth: 25 },
         1: { cellWidth: 15 },
@@ -246,12 +268,24 @@ function App() {
 
     // Add new page for scenario comparison
     doc.addPage()
-    yPos = 15
+
+    // Header for second page
+    doc.setFillColor(...NAVY_RGB)
+    doc.rect(0, 0, pageWidth, 20, 'F')
+    doc.setFontSize(20)
+    doc.setFont('helvetica', 'bold')
+    doc.setTextColor(255, 255, 255)
+    doc.text('STU Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
+    doc.setTextColor(...NAVY_RGB)
+
+    yPos = 28
 
     // All Scenarios Comparison
     doc.setFontSize(14)
     doc.setFont('helvetica', 'bold')
+    doc.setTextColor(...OCEAN_RGB)
     doc.text('All Scenarios Comparison', 15, yPos)
+    doc.setTextColor(...NAVY_RGB)
     yPos += 5
 
     const scenarioData = scenarios.map(s => [
@@ -273,8 +307,16 @@ function App() {
       head: [['Scenario', 'Base Rent Adj', 'Amenity Adj', 'Concessions', 'Annual Revenue', 'Avg Rent/Unit', 'Revenue/SqFt', 'Weighted Avg']],
       body: scenarioData,
       theme: 'grid',
-      headStyles: { fillColor: [102, 126, 234], fontSize: 10 },
-      bodyStyles: { fontSize: 9 },
+      headStyles: {
+        fillColor: NAVY_RGB,
+        textColor: [255, 255, 255],
+        fontSize: 10,
+        fontStyle: 'bold'
+      },
+      bodyStyles: {
+        fontSize: 9,
+        textColor: NAVY_RGB
+      },
       styles: { overflow: 'linebreak' }
     })
 
@@ -296,16 +338,16 @@ function App() {
     return `${(value * 100).toFixed(1)}%`
   }
 
-  // Revenue comparison chart data
+  // Revenue comparison chart data - Greystar Brand Colors
   const chartData = {
     labels: scenarios.map(s => s.name),
     datasets: [
       {
         label: 'Total Annual Revenue',
         data: scenarios.map(s => s.results?.total_annual_revenue || 0),
-        backgroundColor: 'rgba(54, 162, 235, 0.8)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1,
+        backgroundColor: '#0077D4', // Greystar Ocean
+        borderColor: '#0A2245', // Greystar Navy
+        borderWidth: 2,
       },
     ],
   }
@@ -320,15 +362,36 @@ function App() {
         display: true,
         text: 'Revenue Comparison by Scenario',
         font: {
-          size: 18
-        }
+          size: 18,
+          family: 'Arial, Helvetica, sans-serif',
+          weight: '600' as const
+        },
+        color: '#0A2245' // Greystar Navy
       },
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
-          callback: (value: any) => formatCurrency(value)
+          callback: (value: any) => formatCurrency(value),
+          font: {
+            family: 'Arial, Helvetica, sans-serif'
+          },
+          color: '#0A2245' // Greystar Navy
+        },
+        grid: {
+          color: '#B2B3B5' // Greystar Concrete
+        }
+      },
+      x: {
+        ticks: {
+          font: {
+            family: 'Arial, Helvetica, sans-serif'
+          },
+          color: '#0A2245' // Greystar Navy
+        },
+        grid: {
+          color: '#B2B3B5' // Greystar Concrete
         }
       }
     }
@@ -345,7 +408,10 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>STU Sensitivity Analysis</h1>
+        <div className="header-branding">
+          <div className="greystar-logo">GREYSTAR</div>
+          <h1>STU Sensitivity Analysis</h1>
+        </div>
 
         {/* Property Filter */}
         <div className="filters">
@@ -415,7 +481,7 @@ function App() {
               onClick={exportToPDF}
               disabled={scenarios.length === 0}
             >
-              📄 Export PDF
+              Export PDF
             </button>
           </div>
 
@@ -467,7 +533,7 @@ function App() {
                       onClick={() => resetScenario(scenarios[activeTab])}
                       title="Reset to baseline (clear all adjustments)"
                     >
-                      🔄 Reset
+                      Reset
                     </button>
                     <button
                       className={editingScenario?.id === scenarios[activeTab].id ? 'btn-save' : 'btn-edit'}

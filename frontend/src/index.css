@@ -45,7 +45,31 @@ h6 {
 }
 
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    /* Greystar Brand Colors */
+    --navy: #0A2245;
+    --white: #FFFFFF;
+    --ocean: #0077D4;
+    --concrete: #B2B3B5;
+    --sky: #92C9EB;
+    --lawn: #007B0C;
+    --jade: #A6DE9E;
+    --terracotta: #DA7A62;
+    --stucco: #F5EBDC;
+    --sunshine: #FFD972;
+
+    /* Additional colors for accessibility */
+    --navy-light: #1a3a5f;
+    --text-secondary: #5a6c7d;
+
+    /* Soft pastel highlights */
+    --pastel-blue: #E3F2FD;
+    --pastel-green: #E8F5E9;
+    --pastel-yellow: #FFF9E6;
+    --pastel-orange: #FFE8E0;
+    --pastel-purple: #F3E5F5;
+
+    /* Typography - Greystar Brand Standards */
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     font-synthesis: none;
@@ -53,10 +77,11 @@ h6 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #F8F9FA;
+    font-family: Georgia, 'Times New Roman', serif;
   } 
