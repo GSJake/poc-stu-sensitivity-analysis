@@ -16,6 +16,7 @@ import autoTable from 'jspdf-autotable'
 import './App.css'
 import { analysisApi, calculateAllScenarios, propertyApi, scenarioApi } from './api'
 import type { Analysis, Scenario, Property } from './types'
+import greystarLogo from './assets/greystar-logo-white.png'
 
 ChartJS.register(
   CategoryScale,
@@ -181,7 +182,7 @@ function App() {
     doc.setFontSize(20)
     doc.setFont('helvetica', 'bold')
     doc.setTextColor(255, 255, 255) // White text
-    doc.text('STU Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
+    doc.text('Student Revenue Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
 
     // Reset text color for content
     doc.setTextColor(...NAVY_RGB)
@@ -275,7 +276,7 @@ function App() {
     doc.setFontSize(20)
     doc.setFont('helvetica', 'bold')
     doc.setTextColor(255, 255, 255)
-    doc.text('STU Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
+    doc.text('Student Revenue Sensitivity Analysis Report', pageWidth / 2, 12, { align: 'center' })
     doc.setTextColor(...NAVY_RGB)
 
     yPos = 28
@@ -321,7 +322,7 @@ function App() {
     })
 
     // Save PDF
-    const filename = `STU_Analysis_${selectedProperty.name.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`
+    const filename = `Student_Revenue_Analysis_${selectedProperty.name.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`
     doc.save(filename)
   }
 
@@ -400,7 +401,7 @@ function App() {
   if (loading) {
     return (
       <div className="App">
-        <div className="loading">Loading STU Sensitivity Analysis...</div>
+        <div className="loading">Loading Student Revenue Sensitivity Analysis...</div>
       </div>
     )
   }
@@ -409,8 +410,8 @@ function App() {
     <div className="App">
       <header className="app-header">
         <div className="header-branding">
-          <div className="greystar-logo">GREYSTAR</div>
-          <h1>STU Sensitivity Analysis</h1>
+          <img src={greystarLogo} alt="Greystar" className="greystar-logo" />
+          <h1>Student Revenue Sensitivity Analysis</h1>
         </div>
 
         {/* Property Filter */}

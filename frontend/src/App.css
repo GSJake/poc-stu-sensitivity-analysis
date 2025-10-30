@@ -13,16 +13,17 @@
 
 .header-branding {
   margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .greystar-logo {
-  font-family: var(--font-sans);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--white);
+  height: 40px;
+  width: auto;
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  object-fit: contain;
 }
 
 .app-header h1 {
